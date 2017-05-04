@@ -32,7 +32,7 @@ exports.checkLength = function(str){
     console.log(e.name+": "+e.message);
     return valid;
   }
-}
+};
 
 
 exports.containsUpper =function(str){
@@ -76,21 +76,21 @@ exports.containsLower =function(str){
 
 
 exports.containsNumerical =function(str){
-  let has# = false;
+  let hasnumber = false;
   try{
     for(let c=0;c<str.length;c++){
       if(inRange(str[c],48,57)=true){
-        has#=true;
+        hasnumber=true;
         throw new PasswordMessage("has #.");
       }
     }
-    if(has#==false){
+    if(hasnumber==false){
       throw new PasswordMessage("does not have #");
     }
   }
   catch(e){
     console.log(e.name+": "+e.message);
-    return has#;
+    return hasnumber;
   }
 }
 
